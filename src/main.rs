@@ -4,10 +4,10 @@ use std::io::{Read, Result};
 fn main() -> Result<()> {
     let mut file: File = File::open("hello-world.bf")?;
 
-    let mut bf_code = String::new();
+    let mut bf_code: String = String::new();
     file.read_to_string(&mut bf_code)?;
 
-    let output = execute_brainfuck(&bf_code);
+    let output: String = execute_brainfuck(&bf_code);
     println!("{}", output);
 
     Ok(())
